@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Thanks for your feedback</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Puvi', 'Inter', system-ui, sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+    }
+    .wrap {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .check {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #10b981;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+    p {
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="check">&check;</div>
+    <h1>Thanks for your feedback!</h1>
+    <p>Closing...</p>
+  </div>
+  <script>
+    // Tell the parent window (the MEUA course page) that submission succeeded
+    try {
+      window.parent.postMessage({ type: 'mue-feedback-submitted' }, '*');
+    } catch (e) {}
+  </script>
+</body>
+</html>
